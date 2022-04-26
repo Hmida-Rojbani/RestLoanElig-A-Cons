@@ -25,7 +25,7 @@ public class AskCtrl {
 	
 	@PostMapping("/test/client")
 	public String postFormular(Model model, @ModelAttribute("request") CustomerRequest request) {
-		WsResponse response = service.sendRequestToServerVia(request);
+		WsResponse response = service.sendRequestToServerViaFeign(request);
 		model.addAttribute("response",response);
 		return "reponse";
 	}
